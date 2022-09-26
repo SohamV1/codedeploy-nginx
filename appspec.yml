@@ -1,0 +1,16 @@
+version: 0.0
+os: linux
+files: 
+  -source: ./2131_wedding_lite
+  destination: /var/www/html
+hooks: 
+  BeforeInstall:
+    -location: scripts/beforeinstall.sh
+    runas: root
+  ApplicationStart:
+    -location: scripts/applicationstart.sh
+    runas: root
+  ApplicationStop:
+    -location: /scripts/applicationstop.sh
+    runas: root
+    
